@@ -1,7 +1,6 @@
 import pybullet as p
 import pybullet_utils.bullet_client as bc
 import numpy as np
-import time
 import pybullet_data
 import gym
 from gym import spaces, logger
