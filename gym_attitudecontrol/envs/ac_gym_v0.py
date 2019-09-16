@@ -8,6 +8,8 @@ from gym import spaces, logger
 
 class AttitudeControlEnv(gym.Env):
 
+    metadata = {'render.modes': ['human']}
+
     #----------toolbox----------
 
     def _invertQuaternion(self, q):
@@ -311,3 +313,10 @@ class AttitudeControlEnv(gym.Env):
 
         return np.array(self.state)
 
+
+    def render(self, mode='human'):
+        #do nothing
+        print('rendering currently not supported.')
+
+    def close(self):
+        print('rendering not supported currently.')
