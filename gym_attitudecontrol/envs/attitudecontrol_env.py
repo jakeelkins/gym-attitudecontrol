@@ -3,6 +3,7 @@ import pybullet_utils.bullet_client as bc
 import numpy as np
 import pybullet_data
 import gym
+import os.path
 from gym import spaces, logger
 
 
@@ -136,7 +137,10 @@ class AttitudeControlEnv(gym.Env):
 
         self.startOrientation = self.physicsClient.getQuaternionFromEuler([0,0,0])
 
-        self.scID = self.physicsClient.loadURDF("lm50.urdf", self.startPos, self.startOrientation)
+        filepath = os.path.abspath(os.path.dirname(__file__))
+        path = os.path.join(filepath, "lm50.urdf")
+
+        self.scID = self.physicsClient.loadURDF(path, self.startPos, self.startOrientation)
 
         high = np.array([np.pi, np.pi, np.pi, 1, 1, 1])
 
@@ -278,9 +282,14 @@ class AttitudeControlEnv(gym.Env):
 
         self.physicsClient.setAdditionalSearchPath(pybullet_data.getDataPath())
 
+        self.physicsClient.setAdditionalSearchPath('../')
+
         self.physicsClient.setGravity(0,0,0)
 
-        self.scID = self.physicsClient.loadURDF("lm50.urdf", self.startPos, self.startOrientation)
+        filepath = os.path.abspath(os.path.dirname(__file__))
+        path = os.path.join(filepath, "lm50.urdf")
+
+        self.scID = self.physicsClient.loadURDF(path, self.startPos, self.startOrientation)
 
         self.nsteps = 0
 
