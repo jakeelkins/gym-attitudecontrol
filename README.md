@@ -16,3 +16,8 @@ and
 ```
 pip install -e .
 ```
+might work just if you do 
+```
+pip install "git@https://github.com/jakeelkins/gym-attitudecontrol.git"
+```
+still trying to figure out this install thing
