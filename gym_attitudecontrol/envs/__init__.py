@@ -1,1 +1,1 @@
-from gym_attitudecontrol.envs.ac_env_v0 import AttitudeControlEnv
+from gym_attitudecontrol.envs.attitudecontrol_env import AttitudeControlEnv
