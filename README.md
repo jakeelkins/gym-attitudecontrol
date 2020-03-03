@@ -1,5 +1,5 @@
 # gym-attitudecontrol
-my custom OpenAI gym env for my attitude control research
+my original custom OpenAI gym env for my attitude control research, I don't use this one anymore and it's not as good as what I have now but my advisor advised me to keep that code private, RIP
 
 
 ## Install:
